@@ -1,10 +1,10 @@
 /* Weather-Button */
 
 
-Module.register("navbar",{
+Module.register("MM-navbar",{
 
 	getScripts: function(){
-		return ["modules/navbar/jquery-3.1.1.js"];
+		return ["modules/MM-navbar/jquery-3.1.1.js"];
 	},
 	getStyles: function(){
 		return ["weather-icons.css", "navbar.css"];
