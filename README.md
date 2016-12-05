@@ -1,1 +1,1 @@
-## MM-navbar
+![ MagicMirror-navbar]
