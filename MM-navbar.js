@@ -7,7 +7,7 @@ Module.register("MM-navbar",{
 		return ["modules/MM-navbar/jquery-3.1.1.js"];
 	},
 	getStyles: function(){
-		return ["weather-icons.css", "navbar.css"];
+		return ["weather-icons.css", "navbar.css", "font-awesome.css"];
 	},
 	getDom: function(){
 
@@ -22,12 +22,9 @@ Module.register("MM-navbar",{
 		var newshidden = false;
 		
 		weatherbutton.className = "wi wi-day-rain-mix navbar";
-		calendarbutton.className = "navbar";	
-		newsbutton.className = "navbar";		
+		calendarbutton.className = "fa fa-calendar navbar";	
+		newsbutton.className = "fa fa-newspaper-o navbar";		
 
-		calendarbutton.innerHTML = "Kalender";
-		newsbutton.innerHTML = "News";
-				
 		var forecast = MM.getModules().withClass('weatherforecast');
 		var weather = MM.getModules().withClass('currentweather');
 		var calendar = MM.getModules().withClass('calendar');
