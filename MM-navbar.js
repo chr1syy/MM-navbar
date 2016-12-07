@@ -9,18 +9,27 @@ Module.register("MM-navbar",{
 	getStyles: function(){
 		return ["weather-icons.css", "navbar.css", "font-awesome.css"];
 	},
+	notificationReceived: function(notification, payload, sender){
+		if (notification === 'DOM_OBJECTS_CREATED'){
+			MM.getModules().exceptModule(this).exceptWithClass('clock').enumerate(function(module){
+				module.hide(1000, function(){
+				});
+			});
+		}
+	},
 	getDom: function(){
 
 		var wrapper = document.createElement("div");
+		
+		var weatherhidden = true;
+		var calendarhidden = true;
+		var newshidden = true;
 
 		var weatherbutton = document.createElement("span");
 		var calendarbutton = document.createElement("span");
 		var newsbutton = document.createElement("span");
 
-		var weatherhidden = false;
-		var calendarhidden = false;
-		var newshidden = false;
-		
+		wrapper.className = "center";
 		weatherbutton.className = "wi wi-day-rain-mix navbar";
 		calendarbutton.className = "fa fa-calendar navbar";	
 		newsbutton.className = "fa fa-newspaper-o navbar";		
@@ -66,8 +75,10 @@ Module.register("MM-navbar",{
 			}
 		});
 
-		return wrapper;				
 
+		return wrapper;				
+		
+		Log.info("NavigationBar created");
 
 
 	}
